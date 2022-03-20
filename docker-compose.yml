@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  gitbook_app:
+    image: ubuntu:20.04
+    container_name: gitbook_app
+    build:
+      context: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./gitbook/:/home/gitbook/
+    environment:
+      TZ: Asia/Seoul
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
